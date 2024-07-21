@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from 'react-native';
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dropdown } from 'react-native-element-dropdown';
 
 const data = [
@@ -9,8 +9,12 @@ const data = [
 	// Добавьте другие валюты по мере необходимости
 ];
 
-const CurrencySelector = () => {
-	const [value, setValue] = useState('USD');
+const CurrencySelector = ({ selectedCurrency, setSelectedCurrency }) => {
+	const [value, setValue] = useState(selectedCurrency);
+
+	useEffect(() => {
+		setValue(selectedCurrency);
+	}, [selectedCurrency]);
 
 	const renderItem = (item) => {
 		return (
@@ -35,7 +39,10 @@ const CurrencySelector = () => {
 			valueField="value"
 			placeholder="Select currency"
 			value={value}
-			onChange={(item) => setValue(item.value)}
+			onChange={(item) => {
+				setValue(item.value)
+				setSelectedCurrency(item.value);
+			}}
 			renderItem={renderItem}
 		/>
 	);
