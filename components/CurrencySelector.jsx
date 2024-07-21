@@ -5,8 +5,15 @@ import { Dropdown } from 'react-native-element-dropdown';
 const data = [
 	{ label: 'USD', value: 'USD' },
 	{ label: 'EUR', value: 'EUR' },
-	{ label: 'BTN', value: 'BTN' },
-	// Добавьте другие валюты по мере необходимости
+	{ label: 'CZK', value: 'CZK' },
+	{ label: 'KZT', value: 'KZT' },
+	{ label: 'RUB', value: 'RUB' },
+	{ label: 'AED', value: 'AED' },
+	{ label: 'THB', value: 'THB' },
+	{ label: 'VND', value: 'VND' },
+	{ label: 'JPY', value: 'JPY' },
+	{ label: 'CNY', value: 'CNY' },
+	{ label: 'KRW', value: 'KRW' },
 ];
 
 const CurrencySelector = ({ selectedCurrency, setSelectedCurrency }) => {
